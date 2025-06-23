@@ -1,0 +1,41 @@
+{
+  "info": {
+    "name": "HuggingFace Test",
+    "_postman_id": "sample-id",
+    "description": "Test collection for HuggingFace API integration",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Zero-Shot Department Classification",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer YOUR_HUGGINGFACE_TOKEN"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{
+  "inputs": "Customer can't log in.",
+  "parameters": {
+    "candidate_labels": ["Technical Support", "Billing", "HR"]
+  }
+}"
+        },
+        "url": {
+          "raw": "https://api-inference.huggingface.co/models/facebook/bart-large-mnli",
+          "protocol": "https",
+          "host": ["api-inference", "huggingface", "co"],
+          "path": ["models", "facebook", "bart-large-mnli"]
+        }
+      }
+    }
+  ]
+}
